@@ -38,6 +38,30 @@ function getHumanChoice(){
 let humanScore = 0
 let computerScore = 0
 
+function playRound(humanChoice, computerChoice){
+    
+    let winner
+    if (humanChoice === computerChoice) {
+        winner = "tie";
+    } else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        winner = "human";
+        humanScore++;
+    } else {
+        winner = "computer";
+        computerScore++;
+    }
 
-getHumanChoice()
-getComputerChoice()
+    console.log("Human choice: " + humanChoice);
+    console.log("Computer choice: " + computerChoice);
+    console.log("Winner: " + winner);
+    console.log("Score - Human: " + humanScore + ", Computer: " + computerScore);
+
+    alert("Human choice: " + humanChoice + "\nComputer choice: " + computerChoice + "\nWinner: " + winner + "\nScore - Human: " + humanScore + ", Computer: " + computerScore);
+
+
+}
+
