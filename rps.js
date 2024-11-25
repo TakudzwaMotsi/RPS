@@ -26,9 +26,7 @@ function getHumanChoice(){
         else if(option==3){
             theChoice="scissors"
         }
-        else{
-            alert("enter a valid choice")
-        }
+        
     
     alert("your choice is " + theChoice)
 
