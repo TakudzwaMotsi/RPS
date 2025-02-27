@@ -12,63 +12,83 @@ function getComputerChoice(){
         choice="scissors"
     }
     return choice
-    console.log(choice)
-}
-
-function getHumanChoice(){
-    let option= prompt("1.rock 2.paper 3.scissors, select number for choice", 1)
-    let theChoice
-    if(option==1){
-        theChoice="rock"}
-        else if(option==2){
-            theChoice="paper"
-        }
-        else if(option==3){
-            theChoice="scissors"
-        }
-        
     
-    alert("your choice is " + theChoice)
-
-    return theChoice
 }
 
-let humanScore = 0
-let computerScore = 0
+const rock = document.getElementById("rock")
 
-function playRound(humanChoice, computerChoice){
+rock.addEventListener('click', playRound)
+
+
+const paper = document.getElementById("paper")
+
+paper.addEventListener('click', playRound)
+
+
+const ss = document.getElementById("ss")
+
+ss.addEventListener('click', playRound)
+
+   
+
+function playRound(e){
+    e.preventDefault()
+    console.log("id: "+e.target.id)
+     let humanChoice
+    let computerChoice=getComputerChoice()
+
+     if(e.target.id==="rock"){
+        humanChoice="rock"
+        console.log("human choice: "+humanChoice)
+        console.log("comp choice: "+computerChoice)
+        
+     }
+     else if(e.target.id==="paper"){
+        humanChoice="paper"
+        console.log("human choice: "+humanChoice)
+        console.log("comp choice: "+computerChoice)
+    }
+
+    else if(e.target.id==="ss"){
+        humanChoice="scissors"
+        console.log("human choice: "+humanChoice)
+        console.log("comp choice: "+computerChoice)
+    }
+
     
     let winner
-    if (humanChoice === computerChoice) {
-        winner = "tie";
-    } else if (
-        (humanChoice === "rock" && computerChoice === "scissors") ||
-        (humanChoice === "paper" && computerChoice === "rock") ||
-        (humanChoice === "scissors" && computerChoice === "paper")
+    
+     if (humanChoice === computerChoice) {
+         winner = "tie";
+     } 
+     else if (
+         (humanChoice === "rock" && computerChoice === "scissors") ||
+         (humanChoice === "paper" && computerChoice === "rock") ||
+         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-        winner = "human";
-        humanScore++;
-    } else {
-        winner = "computer";
-        computerScore++;
-    }
+         winner = "human";
+    //     //humanScore++;
+     } else {
+         winner = "computer";
+    //    // computerScore++;
+     }
 
-    console.log("Human choice: " + humanChoice);
-    console.log("Computer choice: " + computerChoice);
-    console.log("Winner: " + winner);
-    console.log("Score - Human: " + humanScore + ", Computer: " + computerScore);
+     console.log("Human choice: " + humanChoice);
+     console.log("Computer choice: " + computerChoice);
+     console.log("Winner: " + winner);
+   // console.log("Score - Human: " + humanScore + ", Computer: " + computerScore);
 
-    alert("Human choice: " + humanChoice + "\nComputer choice: " + computerChoice + "\nWinner: " + winner + "\nScore - Human: " + humanScore + ", Computer: " + computerScore);
+   // alert("Human choice: " + humanChoice + "\nComputer choice: " + computerChoice + "\nWinner: " + winner + "\nScore - Human: " + humanScore + ", Computer: " + computerScore);
 
 
 }
-function playGame() {
+// function playGame() {
         
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
+//         let humanChoice = getHumanChoice();
+//         let computerChoice = getComputerChoice();
+//     playRound(humanChoice, computerChoice);
 
-    }
+//     }
 
 //     if(humanScore>computerScore){
 //         alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nyou win " );
@@ -94,5 +114,5 @@ function playGame() {
 //}
 
 // Start the game
-playGame();
+//playGame();
 
