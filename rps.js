@@ -48,14 +48,14 @@ function playRound(e){
         console.log("human choice: "+humanChoice)
         console.log("comp choice: "+computerChoice)
         
-     option.innerText= "Your choice is "+humanChoice+ " and The Coputer choice Is "+ computerChoice
+     option.innerText= "Your Choice is "+humanChoice+ " and The Computer Choice is "+ computerChoice
         
      }
      else if(e.target.id==="paper"){
         humanChoice="paper"
         console.log("human choice: "+humanChoice)
         console.log("comp choice: "+computerChoice)
-        option.innerText= "Your choice is "+humanChoice+ " and The Coputer choice Is "+ computerChoice
+        option.innerText= "Your choice is "+humanChoice+ " and The Computer choice Is "+ computerChoice
 
     }
 
@@ -63,7 +63,7 @@ function playRound(e){
         humanChoice="scissors"
         console.log("human choice: "+humanChoice)
         console.log("comp choice: "+computerChoice)
-        option.innerText= "Your choice is "+humanChoice+ " and The Coputer choice Is "+ computerChoice
+        option.innerText= "Your choice is "+humanChoice+ " and The Computer choice Is "+ computerChoice
 
     }
 
