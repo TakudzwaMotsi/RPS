@@ -29,9 +29,12 @@ const ss = document.getElementById("ss")
 
 ss.addEventListener('click', playRound)
 
-   
+let humanScore =0
+let computerScore=0
+
 
 function playRound(e){
+    
     e.preventDefault()
     console.log("id: "+e.target.id)
      let humanChoice
@@ -39,6 +42,7 @@ function playRound(e){
     const option= document.getElementById("options")
     const result = document.getElementById("result")
 
+    
      if(e.target.id==="rock"){
         humanChoice="rock"
         console.log("human choice: "+humanChoice)
@@ -66,9 +70,10 @@ function playRound(e){
     
     let winner
     
+    
      if (humanChoice === computerChoice) {
          winner = "tie";
-         result.textContent="its a tie "
+         result.textContent="its a tie this round "
      } 
      else if (
          (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -76,55 +81,36 @@ function playRound(e){
          (humanChoice === "scissors" && computerChoice === "paper")
     ) {
          winner = "human";
-         result.textContent="You won"
-    //     //humanScore++;
+         result.textContent="You won this round"
+         humanScore++;
      } else {
          winner = "computer";
-         result.textContent="Computer won"
-    //    // computerScore++;
+         result.textContent="Computer won this round"
+         computerScore++;
      }
      
      
      console.log("Human choice: " + humanChoice);
      console.log("Computer choice: " + computerChoice);
      console.log("Winner: " + winner);
-   // console.log("Score - Human: " + humanScore + ", Computer: " + computerScore);
+    console.log("Score - Human: " + humanScore + ", Computer: " + computerScore);
 
-   // alert("Human choice: " + humanChoice + "\nComputer choice: " + computerChoice + "\nWinner: " + winner + "\nScore - Human: " + humanScore + ", Computer: " + computerScore);
+    if(humanScore==5){
+        console.log("you won the game")
+        result.innerText="Congradulations You have won the Game"
+    humanScore=0
+    computerScore=0
+    }
 
-
+else if(computerScore==5){
+    console.log("computer won this game")
+    result.innerText= "Sorry! the computer won the Game"
+    humanScore=0
+    computerScore=0
 }
-// function playGame() {
-        
-//         let humanChoice = getHumanChoice();
-//         let computerChoice = getComputerChoice();
-//     playRound(humanChoice, computerChoice);
 
-//     }
+const score= document.getElementById("score")
+score.innerText=`your score: `+humanScore+ ' | computer score: '+computerScore
+}
 
-//     if(humanScore>computerScore){
-//         alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nyou win " );
-
-//     }
-//     else if(computerScore>humanScore){
-//         alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nyou lose " );
-
-//     }
-//     else{
-//         alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nits a draw " );
-
-//     }
-
-// i=0
-// humanScore=0
-// computerScore=0
-    // Ask if the user wants to play again
-   // let playAgain = confirm("Do you want to play again?");
-   // if (playAgain) {
-     //   playGame(); // recursive call to play again
-   // }
-//}
-
-// Start the game
-//playGame();
 
