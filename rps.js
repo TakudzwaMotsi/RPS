@@ -36,23 +36,31 @@ function playRound(e){
     console.log("id: "+e.target.id)
      let humanChoice
     let computerChoice=getComputerChoice()
+    const option= document.getElementById("options")
+    const result = document.getElementById("result")
 
      if(e.target.id==="rock"){
         humanChoice="rock"
         console.log("human choice: "+humanChoice)
         console.log("comp choice: "+computerChoice)
         
+     option.innerText= "Your choice is "+humanChoice+ " and The Coputer choice Is "+ computerChoice
+        
      }
      else if(e.target.id==="paper"){
         humanChoice="paper"
         console.log("human choice: "+humanChoice)
         console.log("comp choice: "+computerChoice)
+        option.innerText= "Your choice is "+humanChoice+ " and The Coputer choice Is "+ computerChoice
+
     }
 
     else if(e.target.id==="ss"){
         humanChoice="scissors"
         console.log("human choice: "+humanChoice)
         console.log("comp choice: "+computerChoice)
+        option.innerText= "Your choice is "+humanChoice+ " and The Coputer choice Is "+ computerChoice
+
     }
 
     
@@ -60,6 +68,7 @@ function playRound(e){
     
      if (humanChoice === computerChoice) {
          winner = "tie";
+         result.textContent="its a tie "
      } 
      else if (
          (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -67,12 +76,15 @@ function playRound(e){
          (humanChoice === "scissors" && computerChoice === "paper")
     ) {
          winner = "human";
+         result.textContent="You won"
     //     //humanScore++;
      } else {
          winner = "computer";
+         result.textContent="Computer won"
     //    // computerScore++;
      }
-
+     
+     
      console.log("Human choice: " + humanChoice);
      console.log("Computer choice: " + computerChoice);
      console.log("Winner: " + winner);
