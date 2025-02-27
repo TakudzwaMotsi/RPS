@@ -63,36 +63,35 @@ function playRound(humanChoice, computerChoice){
 
 }
 function playGame() {
-   
-    for(let i=0; i<5; i++){
+        
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
 
     }
 
-    if(humanScore>computerScore){
-        alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nyou win " );
+//     if(humanScore>computerScore){
+//         alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nyou win " );
 
-    }
-    else if(computerScore>humanScore){
-        alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nyou lose " );
+//     }
+//     else if(computerScore>humanScore){
+//         alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nyou lose " );
 
-    }
-    else{
-        alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nits a draw " );
+//     }
+//     else{
+//         alert("your total score is: " + humanScore + "\nComputer total score is: " + computerScore + "\nits a draw " );
 
-    }
+//     }
 
-i=0
-humanScore=0
-computerScore=0
+// i=0
+// humanScore=0
+// computerScore=0
     // Ask if the user wants to play again
-    let playAgain = confirm("Do you want to play again?");
-    if (playAgain) {
-        playGame(); // recursive call to play again
-    }
-}
+   // let playAgain = confirm("Do you want to play again?");
+   // if (playAgain) {
+     //   playGame(); // recursive call to play again
+   // }
+//}
 
 // Start the game
 playGame();
